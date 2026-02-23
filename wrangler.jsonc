@@ -5,10 +5,3 @@
     "directory": "./dist"
   }
 }
-```
-
-> **Hinweis zum `directory`-Pfad:** Schau kurz im Repo nach, wie der Build-Output-Ordner heißt. Bei Webpack-Projekten ist es oft `dist`, aber es könnte auch `build`, `public` oder etwas anderes sein. Im Build-Log sehe ich Dateien wie `index.html`, `css/index.css`, `js/index.js` – schau in der `webpack.prod.js` nach dem `output`-Pfad, oder prüfe nach dem Build welcher Ordner neu erstellt wurde.
-
-Danach im Cloudflare Pages-Dashboard unter **Settings → Build & Deploy** den Deploy Command anpassen auf:
-```
-npx wrangler deploy
