@@ -1,62 +1,74 @@
-<div class="dialog" id="dlg_changelog" aria-labelledby="dlg_changelog-title" aria-hidden="true">
-    <div class="dialog-overlay" data-a11y-dialog-hide></div>
-    <div class="dialog-content">
-        <header>
-            <h3 id="dlg_changelog-title">Turtle Toolz 3.2.0 </h3>
-            <button data-a11y-dialog-hide><svg class="w-6 h-6" id="close-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
-                    </path>
-                </svg></button>
-        </header>
-        <section>
-            <div class="grid better_r">
-                <div style="flex-direction: column; display: flex;gap:0.5rem;">
-                    <div class="card _mt-1 _p-1 _bg3 _shadowless">
-                        <h5>#Changelog 12/21/2025 </h5>
-                        <ul class="keep-ls">
-                            <li>Enhanced build optimization with HTML/CSS/JS minification</li>
-                            <li>Added code splitting for vendor bundles</li>
-                            <li>Implemented performance budgets for bundle size monitoring</li>
-                            <li>Upgraded Babel packages to latest versions</li>
-                            <li>Removed node-sass dependency</li>
-                            <li>Added CSS minimization plugin</li>
-                            <li>Updated adblock host lists</li>
-                            <li>Improved template rendering</li>
-                        </ul>
-                    </div>
-                    <div class="card _mt-1 _p-1 _bg3 _shadowless">
-                        <h5>#Changelog 08/28/2025 </h5>
-                        <ul class="keep-ls">
-                            <li>Ads list update</li>
-                            <li>Improved performance</li>
-                        </ul>
-                    </div>
-                    <div class="card _mt-1 _p-1 _bg3 _shadowless">
-                        <h5>#Changelog 01/30/2025 </h5>
-                        <ul class="keep-ls">
-                            <li>Forked from the official repo</li>
-                            <li>Codebase cleanup</li>
-                            <li>Fix all the absolute path from the original project</li>
-                            <li>Removed all the bloatware</li>
-                        </ul>
-                    </div>
-                    <div style="flex-direction: column; display: flex;gap:0.5rem;">
-                        <div class="card _mt-1 _p-1 _bg3 _shadowless">
-                            <h5>#Changelog 8/05/2024 </h5>
-                            <ul class="keep-ls">
-                                <li>Updated hosts list</li>
-                                <li>Removed some advertising hosts that were used for administration and not to serve ads.</li>
-                                <li>Added details for cosmetic and script tests</li>
-                                <li>Moved warning card for better UX</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-        </section>
-        <footer>
-            <button data-a11y-dialog-hide>
-                Close
-            </button>
-        </footer>
-    </div>
+<%
+const changelogs = [
+  {
+    date: "21.12.2025",
+    items: [
+      "Verbesserte Build-Optimierung mit HTML/CSS/JS-Minifizierung",
+      "Code-Splitting für Vendor-Bundles hinzugefügt",
+      "Performance-Budgets zur Bundle-Größenüberwachung implementiert",
+      "Babel-Pakete auf neueste Versionen aktualisiert",
+      "node-sass-Abhängigkeit entfernt",
+      "CSS-Minifizierungs-Plugin hinzugefügt",
+      "Adblock-Hostlisten aktualisiert",
+      "Template-Rendering verbessert"
+    ]
+  },
+  {
+    date: "28.08.2025",
+    items: [
+      "Werbelisten aktualisiert",
+      "Performance verbessert"
+    ]
+  },
+  {
+    date: "30.01.2025",
+    items: [
+      "Fork vom offiziellen Repository",
+      "Codebase bereinigt",
+      "Alle absoluten Pfade aus dem Originalprojekt korrigiert",
+      "Unnötige Komponenten entfernt"
+    ]
+  },
+  {
+    date: "05.08.2024",
+    items: [
+      "Hostliste aktualisiert",
+      "Einige Werbe-Hosts entfernt, die für Administration verwendet wurden",
+      "Details für Cosmetic- und Script-Tests hinzugefügt",
+      "Hinweiskarte für bessere Benutzerfreundlichkeit verschoben"
+    ]
+  }
+];
+%>
+
+<div class="dialog" id="dlg_changelog" data-a11y-dialog="dlg_changelog"
+  aria-labelledby="dlg_changelog-title" aria-hidden="true">
+  <div class="dialog-overlay" data-a11y-dialog-hide></div>
+  <div class="dialog-content">
+    <header>
+      <h3 id="dlg_changelog-title">vonBusch Security – Firewall & Ad Blocker Test</h3>
+      <button data-a11y-dialog-hide aria-label="Dialog schließen">
+        <svg class="w-6 h-6" id="close-icon" fill="none" stroke="currentColor"
+          viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </header>
+    <section>
+      <% for (const log of changelogs) { %>
+      <div class="card _bg-bg3 _mt-2">
+        <h5>#Änderungsprotokoll <%= log.date %></h5>
+        <ul>
+          <% for (const item of log.items) { %>
+          <li><%= item %></li>
+          <% } %>
+        </ul>
+      </div>
+      <% } %>
+    </section>
+    <footer>
+      <button data-a11y-dialog-hide aria-label="Dialog schließen">Schließen</button>
+    </footer>
+  </div>
 </div>
