@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <%- include('partials/head.ejs',
 		{
 			page:'adblock',
-			title:'Test Ad Block - Toolz',
-			description:"Check your ad blocker's efficiency effortlessly with Toolz. Our intuitive and visually appealing tool lets you test the performance of your ad or content blocker with just one click. Get quick, accurate insights to optimize your browsing experience and enjoy an ad-free journey with confidence.",
+			title:'vonBusch - Security Firewall & Ad Blocker Test',
+			description:"Überprüfe die Effizienz deines Werbeblockers mit dem vonBusch - Security Firewall & Ad Blocker Test. Unser intuitives Tool ermöglicht es dir, die Leistung deines Werbeblockers mit einem Klick zu testen.",
 			url: 'adblock.turtlecute.org',
 			preview_thumbnail:'https://raw.githubusercontent.com/Turtlecute33/toolz/master/src/assets/preview_toolz.png',
 			keywords:'adblock test,ad block test,ad blocker test,adblock,test adblock,analytics,trackers,ads,cosmetic filter,ublock, ublockorigin,adblock extension,script loading'
@@ -18,8 +18,8 @@
         <div class="dialog-overlay" data-a11y-dialog-hide></div>
         <div class="dialog-content">
             <header>
-                <h3 id="dlg_compatibility-title">Compatibility Table</h3>
-                <button data-a11y-dialog-hide aria-label="Close compatibility table dialog"><svg class="w-6 h-6" id="close-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <h3 id="dlg_compatibility-title">Kompatibilitätstabelle</h3>
+                <button data-a11y-dialog-hide aria-label="Kompatibilitätstabelle schließen"><svg class="w-6 h-6" id="close-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
                         </path>
                     </svg></button>
@@ -28,26 +28,26 @@
                 <div>
                     <div class="card _pb-2">
                         <p>
-                            The test relies on JavaScript, it can encounter problems due to browser limitations and varying solution approaches.<br>
-                            Below you'll find browser-adblock solutions that have been validated and tested to work effectively
+                            Der Test basiert auf JavaScript und kann aufgrund von Browserbeschränkungen und unterschiedlichen Lösungsansätzen auf Probleme stoßen.<br>
+                            Nachfolgend findest du Browser-Adblocker-Kombinationen, die validiert und getestet wurden
                         </p>
-                        <b class="_txt-red"><i>You will not see any ads and no trackers will be activated </i></b>
-                        <b class="_txt-blue"><i>A configuration with multiple solutions at the same time can lead to false positives.</i></b>
+                        <b class="_txt-red"><i>Du wirst keine Werbung sehen und keine Tracker werden aktiviert</i></b>
+                        <b class="_txt-blue"><i>Eine Konfiguration mit mehreren Lösungen gleichzeitig kann zu falsch-positiven Ergebnissen führen.</i></b>
                         <h5>
-                            <b class="_txt-orange"><i>While some browser+adblock solutions may not be supported by this test it's important to note that this does not imply they are not effective or reliable</i></b>
+                            <b class="_txt-orange"><i>Auch wenn einige Browser+Adblocker-Kombinationen von diesem Test nicht unterstützt werden, bedeutet das nicht, dass sie ineffektiv oder unzuverlässig sind</i></b>
                         </h5>
                     </div>
                     <div class="card _bg-bg3 _mt-2">
                         <div class="row _ta-center">
-                            <div>Adblock Solution </div>
-                            <div>Browser-Platform</div>
+                            <div>Adblocker-Lösung</div>
+                            <div>Browser-Plattform</div>
                         </div>
                         <hr>
                         <% for (let key in adblock_compatibility) { %>
                         <% value = adblock_compatibility[key]%>
                         <% if (key != 'default' && value.hidden!=true) { %>
                         <div class="row">
-                            <div data-th="solution (type)">
+                            <div data-th="Lösung (Typ)">
                                 <span class="rwd-table-t"><%- value.icon %>
                                     <%= value.name %> (<%= value.type%>)</span>
                                 <br>
@@ -65,7 +65,6 @@
                                         </svg>
                                         <%= value["no-issues"][b] %></span>
                                     <% } %>
-
                                     <% for (let b in value["issues"]) { %>
                                     <span class="light-red">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -94,8 +93,8 @@
                 </div>
             </section>
             <footer>
-                <button data-a11y-dialog-hide aria-label="Close dialog">
-                    Close
+                <button data-a11y-dialog-hide aria-label="Dialog schließen">
+                    Schließen
                 </button>
             </footer>
         </div>
@@ -110,7 +109,7 @@
     <main>
         <noscript>
             <div class="_bg-red _txt-white _radius _p-1 better_r _py-2 _mt-2">
-                <h3>JavaScript is required to run this test. Please enable JavaScript in your browser settings.</h3>
+                <h3>JavaScript ist erforderlich, um diesen Test auszuführen. Bitte aktiviere JavaScript in deinen Browsereinstellungen.</h3>
                 <style>
                     #m_test {
                         display: none;
@@ -160,7 +159,6 @@
                                         <path d='M12 4L4 8l8 4 8-4-8-4M4 12l8 4 8-4M4 16l8 4 8-4' />
                                     </svg>
                                 </div>
-
                             </div>
                             <div class="lt_cwrap">
                                 <div class="lt_circle">
@@ -172,19 +170,19 @@
                         </div>
                     </div>
                     <div class="_f-center">
-                        <button id="start_test" aria-label="Re-test ad blocker"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-refresh-dot" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <button id="start_test" aria-label="Werbeblockierung erneut testen"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-refresh-dot" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                 <path d="M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -4v4h4"></path>
                                 <path d="M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4"></path>
                                 <circle cx="12" cy="12" r="1"></circle>
-                            </svg> &nbsp; Re-test</button>
+                            </svg> &nbsp; Erneut testen</button>
                     </div>
                     <div class="_f-center">
                         <div class="card" id="adb_test_r"><span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="var(--blue)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
                                     <path stroke="none" d="M0 0h24v24H0z"></path>
                                     <path d="M11 12a1 1 0 1 0 2 0 1 1 0 1 0-2 0"></path>
                                     <path d="M3 12a9 9 0 1 0 18 0 9 9 0 1 0-18 0"></path>
-                                </svg> Total : </span><span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" stroke-width="2" stroke="var(--green)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                </svg> Gesamt: </span><span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" stroke-width="2" stroke="var(--green)" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M0 0h24v24H0z" stroke="none"></path>
                                     <circle cx="12" cy="12" r="9"></circle>
                                     <path d="M9 12l2 2 4-4"></path>
@@ -198,45 +196,44 @@
             </section>
             <section>
                 <div class="_2-col">
-                    <button data-a11y-dialog-show="dlg_reports" aria-label="View test results">
+                    <button data-a11y-dialog-show="dlg_reports" aria-label="Testergebnisse anzeigen">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                             <path d="M12 8l0 4l2 2"></path>
                             <path d="M3.05 11a9 9 0 1 1 .5 4m-.5 5v-5h5"></path>
                         </svg>
-                        Results</button>
-                    <button data-a11y-dialog-show="dlg_faq" aria-label="View frequently asked questions">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="prefix__icon prefix__icon-tabler prefix__icon-tabler-info-square" aria-hidden="true">
+                        Ergebnisse</button>
+                    <button data-a11y-dialog-show="dlg_faq" aria-label="Häufig gestellte Fragen anzeigen">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true">
                             <path stroke="none" d="M0 0h24v24H0z" />
                             <path d="M12 8 12.01 8" />
                             <rect width="16" height="16" x="4" y="4" rx="2" />
                             <path d="M11 12 12 12 12 16 13 16" /></svg>
                         FAQ</button>
-                    <button data-a11y-dialog-show="dlg_logs" aria-label="View test logs">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="prefix__icon prefix__icon-tabler prefix__icon-tabler-message-2-code" aria-hidden="true">
+                    <button data-a11y-dialog-show="dlg_logs" aria-label="Testprotokolle anzeigen">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true">
                             <path stroke="none" d="M0 0h24v24H0z" />
                             <path d="m12 20-3-3H7a3 3 0 0 1-3-3V8a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3h-2l-3 3" />
                             <path d="m10 9-2 2 2 2M14 9l2 2-2 2" /></svg>
-                        Logs</button>
-                    <button data-a11y-dialog-show="dlg_settings" aria-label="Open settings">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="prefix__icon prefix__icon-tabler prefix__icon-tabler-settings" aria-hidden="true">
+                        Protokolle</button>
+                    <button data-a11y-dialog-show="dlg_settings" aria-label="Einstellungen öffnen">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true">
                             <path stroke="none" d="M0 0h24v24H0z" />
                             <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 0 0-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066-2.573c-.94-1.543.826-3.31 2.37-2.37 1 .608 2.296.07 2.572-1.065z" />
                             <path d="M9 12a3 3 0 1 0 6 0 3 3 0 1 0-6 0" /></svg>
-                        Settings</button>
+                        Einstellungen</button>
                 </div>
                 <br>
                 <div>
                     <div class="_bg-orange _txt-white _radius _p-1 better_r">
                         <b>
-                          The test may not work as expected with some browser/blocker combinations. I found that the uBlock Origin extension breaks the final result. To fix it, add adblock.turtlecute.org as an exception in uBlock rules.<br>
-                            <button data-a11y-dialog-show="dlg_compatibility" aria-label="View compatibility table">
+                          Der Test funktioniert möglicherweise nicht wie erwartet mit einigen Browser/Blocker-Kombinationen. Die uBlock Origin Erweiterung kann das Endergebnis beeinflussen. Um dies zu beheben, füge diese Seite als Ausnahme in den uBlock-Regeln hinzu.<br>
+                            <button data-a11y-dialog-show="dlg_compatibility" aria-label="Kompatibilitätstabelle anzeigen">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true">
                                     <path stroke="none" d="M0 0h24v24H0z" />
                                     <path d="m7 12 5 5L22 7M2 12l5 5m5-5 5-5" /></svg>
-                                Compatibility</button><br>
+                                Kompatibilität</button><br>
                     </div>
-<br>
                 </div>
             </section>
             <section class="page-active" id="adb_test">
@@ -263,7 +260,7 @@
                                             <path d='M7 15v-4a2 2 0 014 0v4m-4-2h4m6-4v6h-1.5a1.5 1.5 0 111.5-1.5' />
                                         </svg>
                                         &nbsp;
-                                        Static Ad
+                                        Statische Werbung
                                         <div id="cts_test" class="textads adsbox banner_ads adbox ADBox AdBox adbox-wrapper adSocial ">&nbsp;</div>
                                     </div>
                                 </div>
@@ -279,43 +276,37 @@
                                             <path d="M19 9h2"></path>
                                         </svg>
                                         &nbsp;
-                                        Dynamic Ad
+                                        Dynamische Werbung
                                         <div id="ctd_test"></div>
                                     </div>
                                 </div>
-
                             </div>
                             <div>
                                 <details>
-                                    <summary>Why Cosmetic Filter test fails?</summary>
+                                    <summary>Warum schlägt der Cosmetic Filter Test fehl?</summary>
                                     <div class="better_r _p-1">
                                         <p>
-                                            If a cosmetic filter test fails, it simply means that the specific website being tested
-                                            (in this case adblock.turtlecute.org) isn't included in any of adblock's rules or lists.<br>
-                                            It's important to note that this does not mean that cosmetic filtering fails on all websites.<br> You can
-                                            confirm this by visiting a popular, ad-rich site where you're unlikely to see any ad boxes.<br>
-                                            The purpose of this test is to assess the functionality of the blocking feature, not to determine its scope
-                                            or coverage. By adding the following rules to your adblock solution, you may be able to solve the problem:
+                                            Wenn ein Cosmetic Filter Test fehlschlägt, bedeutet das, dass die getestete Website
+                                            in keiner der Adblocker-Regeln oder -Listen enthalten ist.<br>
+                                            Das bedeutet nicht, dass das Cosmetic Filtering auf allen Websites fehlschlägt.<br>
+                                            Du kannst dies bestätigen, indem du eine bekannte werbeintensive Website besuchst.<br>
+                                            Durch Hinzufügen der folgenden Regeln zu deiner Adblocker-Lösung kannst du das Problem möglicherweise beheben:
                                         </p>
-
                                         <pre>
 											<code>adblock.turtlecute.org##.adbox.banner_ads.adsbox
 d3ward.github.io##.textads</code></pre>
-                                        <b>Adding these rules could lead to a successful test result proving your adblock
-                                            solution have that feature of blocking with cosmetic filters</b>
+                                        <b>Das Hinzufügen dieser Regeln könnte zu einem erfolgreichen Testergebnis führen und beweisen, dass deine Adblocker-Lösung Cosmetic Filtering unterstützt</b>
                                     </div>
                                 </details>
-
                             </div>
                         </div>
                     </div>
                     <div id="sl_wrap">
                         <div class="test_card">
                             <h5>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-script" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                    <path d="M17 20h-11a3 3 0 0 1 0 -6h11a3 3 0 0 0 0 6h1a3 3 0 0 0 3 -3v-11a2 2 0 0 0 -2 -2h-10a2 2 0 0 0 -2 2v8">
-                                    </path>
+                                    <path d="M17 20h-11a3 3 0 0 1 0 -6h11a3 3 0 0 0 0 6h1a3 3 0 0 0 3 -3v-11a2 2 0 0 0 -2 -2h-10a2 2 0 0 0 -2 2v8"></path>
                                 </svg>
                                 &nbsp; Ad Scripts Loading
                             </h5>
@@ -335,26 +326,21 @@ d3ward.github.io##.textads</code></pre>
                             </div>
                             <div>
                                 <details>
-                                    <summary>Why Ad Script Loading test fails??</summary>
+                                    <summary>Warum schlägt der Ad Script Loading Test fehl?</summary>
                                     <div class="better_r _p-1">
                                         <p>
-                                            Same as the cosmetic tests. If an ad script load test fails, it usually means that the specific website being
-                                            tested isn't covered by any of adblock's rules or lists, especially for blocking ad-related scripts like my fake
-                                            <code>ads.js</code><br>
-                                            However, this error doesn't indicate a general failure of ad script blocking on all websites.<br>
-                                            To check, you can visit a popular website known for its abundance of ads scripts.<br>
-                                            Chances are that you won't encounter any blocked ad scripts.
-                                            It's important to understand that this test is designed to evaluate the functionality of ad script blocking, not
-                                            its scope or effectiveness.
-                                            To potentially fix the problem, consider adding the following rules to your adblock solution:
+                                            Ähnlich wie beim Cosmetic Filter Test bedeutet ein fehlgeschlagener Ad Script Load Test, dass die getestete
+                                            Website nicht durch Adblocker-Regeln abgedeckt ist, insbesondere für das Blockieren von werbebezogenen
+                                            Skripten wie dem gefälschten <code>ads.js</code><br>
+                                            Dieser Fehler bedeutet jedoch nicht, dass das Blockieren von Werbeskripten auf allen Websites fehlschlägt.<br>
+                                            Zum Testen kannst du eine bekannte werbeintensive Website besuchen.<br>
+                                            Durch Hinzufügen der folgenden Regeln kannst du das Problem möglicherweise beheben:
                                         </p>
                                         <pre><code>/pagead.js$domain=adblock.turtlecute.org
 /widget/ads.</code></pre>
-                                        <b>Adding these rules could lead to a successful test result proving your adblock
-                                            solution have that feature of blocking script loading</b>
+                                        <b>Das Hinzufügen dieser Regeln könnte zu einem erfolgreichen Testergebnis führen und beweisen, dass deine Adblocker-Lösung das Blockieren von Skripten unterstützt</b>
                                     </div>
                                 </details>
-
                             </div>
                         </div>
                         <hr>
