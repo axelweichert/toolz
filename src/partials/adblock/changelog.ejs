@@ -1,74 +1,19 @@
-<%
-const changelogs = [
-  {
-    date: "21.12.2025",
-    items: [
-      "Verbesserte Build-Optimierung mit HTML/CSS/JS-Minifizierung",
-      "Code-Splitting für Vendor-Bundles hinzugefügt",
-      "Performance-Budgets zur Bundle-Größenüberwachung implementiert",
-      "Babel-Pakete auf neueste Versionen aktualisiert",
-      "node-sass-Abhängigkeit entfernt",
-      "CSS-Minifizierungs-Plugin hinzugefügt",
-      "Adblock-Hostlisten aktualisiert",
-      "Template-Rendering verbessert"
-    ]
-  },
-  {
-    date: "28.08.2025",
-    items: [
-      "Werbelisten aktualisiert",
-      "Performance verbessert"
-    ]
-  },
-  {
-    date: "30.01.2025",
-    items: [
-      "Fork vom offiziellen Repository",
-      "Codebase bereinigt",
-      "Alle absoluten Pfade aus dem Originalprojekt korrigiert",
-      "Unnötige Komponenten entfernt"
-    ]
-  },
-  {
-    date: "05.08.2024",
-    items: [
-      "Hostliste aktualisiert",
-      "Einige Werbe-Hosts entfernt, die für Administration verwendet wurden",
-      "Details für Cosmetic- und Script-Tests hinzugefügt",
-      "Hinweiskarte für bessere Benutzerfreundlichkeit verschoben"
-    ]
-  }
-];
-%>
-
-<div class="dialog" id="dlg_changelog" data-a11y-dialog="dlg_changelog"
-  aria-labelledby="dlg_changelog-title" aria-hidden="true">
-  <div class="dialog-overlay" data-a11y-dialog-hide></div>
-  <div class="dialog-content">
-    <header>
-      <h3 id="dlg_changelog-title">vonBusch Security – Firewall & Ad Blocker Test</h3>
-      <button data-a11y-dialog-hide aria-label="Dialog schließen">
-        <svg class="w-6 h-6" id="close-icon" fill="none" stroke="currentColor"
-          viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
-      </button>
-    </header>
-    <section>
-      <% for (const log of changelogs) { %>
-      <div class="card _bg-bg3 _mt-2">
-        <h5>#Änderungsprotokoll <%= log.date %></h5>
-        <ul>
-          <% for (const item of log.items) { %>
-          <li><%= item %></li>
-          <% } %>
-        </ul>
-      </div>
-      <% } %>
-    </section>
-    <footer>
-      <button data-a11y-dialog-hide aria-label="Dialog schließen">Schließen</button>
-    </footer>
-  </div>
+<div class="dialog" id="dlg_changelog" data-a11y-dialog="dlg_changelog" aria-labelledby="dlg_changelog-title" aria-hidden="true">
+    <div class="dialog-overlay" data-a11y-dialog-hide></div>
+    <div class="dialog-content">
+        <header>
+            <h3 id="dlg_changelog-title">vonBusch Security – Firewall & Ad Blocker Test</h3>
+            <button data-a11y-dialog-hide aria-label="Dialog schließen">
+                <svg class="w-6 h-6" id="close-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </header>
+        <section>
+            <p>Kein Changelog verfügbar.</p>
+        </section>
+        <footer>
+            <button data-a11y-dialog-hide aria-label="Dialog schließen">Schließen</button>
+        </footer>
+    </div>
 </div>
